@@ -1,4 +1,4 @@
-# Splash
+# Prime
 Universal themer for Linux programs.
 Set themes from a large collection of `.bash` colourschemes.
 ___
