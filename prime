@@ -1,0 +1,110 @@
+#!/bin/python
+from re import sub
+from os.path import abspath, realpath, join, dirname
+import os
+from pathlib import Path
+#import sys
+import glob
+import argparse
+myhome = str(Path.home())
+templatepath = rf"{myhome}/.config/Prime/templates/*"
+templatedir = rf"{myhome}/.config/Prime/templates/"
+homedir = rf"{myhome}"
+# Error messages
+INVALID_FILETYPE_MSG = "Error: %s is not a "
+
+def theme(args):
+	# get the file name/path
+	themename = "foo"
+#args.theme[0]
+parser = argparse.ArgumentParser(description = "Instantly theme your whole desktop", prog="prime")
+
+opt = parser.add_argument_group("opts")
+
+# add argument
+opt.add_argument("-l", "--list", action='store_true',
+                     help = "List all available themes")
+
+opt.add_argument("-t", "--theme",  metavar = "[themename]", type = str, default = None)
+
+
+
+# parse the arguments from standard input
+args = parser.parse_args()
+ 
+# check if add argument has any input data.
+# If it has, then print sum of the given numbers
+
+if args.theme != None:
+#		theme(args)
+		themename = args.theme
+		os.system('rm $HOME/.config/Prime/current.py')
+		os.system('ln -s $HOME/.config/Prime/colourschemes/{}.bash $HOME/.config/Prime/current.py' .format(themename))
+elif args.list != None:
+		os.system('ls $HOME/.config/Prime/colourschemes')	
+		raise SystemExit(1)
+		
+
+from current import *	# Import current theme
+
+dict_replace = {
+    '{FOREGROUND}': foreground,
+    '{BACKGROUND}': background,
+    '{CURSOR}': cursor,
+    '{BLACK}': color0,
+    '{ALTBLACK}': color8,
+    '{RED}': color1,
+    '{ALTRED}': color9,
+    '{GREEN}': color2,
+    '{ALTGREEN}': color10,
+    '{YELLOW}': color3,
+    '{ALTYELLOW}': color11,
+    '{BLUE}': color4,
+    '{ALTBLUE}': color12,
+    '{MAGENTA}': color5,
+    '{ALTMAGENTA}': color13,
+    '{CYAN}': color6,
+    '{ALTCYAN}': color14,
+    '{WHITE}': color7,
+    '{ALTWHITE}': color15
+}
+
+
+for filepath in glob.iglob(myhome+'/.config/Prime/templates/*'):
+
+
+#file = abspath(join(dirname(__file__), 'templates/foo.txt'))
+	file_open = open(filepath, 'r')
+	file_read = file_open.read()
+	file_open.close()
+
+	templatename1 = filepath.replace('\\', '/')
+	templatename2 = templatename1.replace(templatedir, '')
+	templatename = homedir + templatename2
+#	file_out = os.system("ls ./templates/ | tr '\\' '/'")
+#new_file = abspath(join(dirname(__file__), 'bar.txt'))
+	new_file_open = open(templatename, 'w')
+
+
+	def replace_content(dict_replace, target):
+	    """Based on dict, replaces key with the value on the target."""
+	
+	    for check, replacer in list(dict_replace.items()):
+	        target = sub(check, replacer, target)
+	        # target = target.replace(check, replacer)
+
+	    return target
+
+
+	new_content = replace_content(dict_replace, file_read)
+	new_file_open.write(new_content)
+	new_file_open.close()
+
+# Test
+
+
+#print('Installed themes')
+#print('Reloading programs')
+os.system(myhome+'/.config/Prime/reload.sh')
+#print('Done!')
+print('Set the {} theme.' .format(themename))
