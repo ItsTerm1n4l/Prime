@@ -3,7 +3,7 @@ Universal themer for Linux programs.
 Set themes from a large collection of `.bash` colourschemes.
 ___
 
- ![screenshot with embark theme](/assets/embark-screenshot.png)
+ ![screenshot with nordic-night theme](/assets/nordic-night-screenshot.png)
 ___
 ## **Usage**
 
@@ -35,8 +35,11 @@ Thank you!
 
 <details>
 <summary>Gallery (Click to expand)</summary>
-<br>
- ![screenshot with nordic-night theme](./assets/nordic-night-screenshot.png)
+![](/assets/embark-screenshot.png)
+![](/assets/everforest-screenshot.png)
+![](/assets/poimandres-screenshot.png)
+![](/assets/monokai-screenshot.png)
+
 </details>
 
 ### **Included Themes**
