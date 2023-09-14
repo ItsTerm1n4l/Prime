@@ -3,13 +3,12 @@ from re import sub
 from os.path import abspath, realpath, join, dirname
 import os
 from pathlib import Path
-#import sys
 import glob
 import argparse
 myhome = str(Path.home())
+COLOURSCHEMEDIR = rf"{myhome}/.config/Prime/colourschemes/"
 templatepath = rf"{myhome}/.config/Prime/templates/*"
 templatedir = rf"{myhome}/.config/Prime/templates/"
-homedir = rf"{myhome}"
 # Error messages
 INVALID_FILETYPE_MSG = "Error: %s is not a "
 
@@ -19,12 +18,13 @@ def theme(args):
 #args.theme[0]
 parser = argparse.ArgumentParser(description = "Instantly theme your whole desktop", prog="prime")
 
-opt = parser.add_argument_group("opts")
+opt = parser.add_argument_group("options")
 
 # add argument
 opt.add_argument("-l", "--list", action='store_true',
-                     help = "List all available themes")
-
+				help = "List all available themes")
+opt.add_argument("-p", "--path",  metavar = "[themepath]", type = str, default = COLOURSCHEMEDIR,
+				help = "path to custom theme file")
 opt.add_argument("-t", "--theme",  metavar = "[themename]", type = str, default = None)
 
 
@@ -37,40 +37,40 @@ args = parser.parse_args()
 
 if args.theme != None:
 #		theme(args)
+		COLOURSCHEMEDIR = args.path
 		themename = args.theme
 		os.system('rm $HOME/.config/Prime/current.py')
-		os.system('ln -s $HOME/.config/Prime/colourschemes/{}.bash $HOME/.config/Prime/current.py' .format(themename))
+		os.system('ln -s {}{}.bash $HOME/.config/Prime/current.py' .format(COLOURSCHEMEDIR, themename))
 elif args.list != None:
 		os.system('ls $HOME/.config/Prime/colourschemes')	
-		raise SystemExit(1)
-		
+		raise SystemExit(1)		
 
 from current import *	# Import current theme
 
 dict_replace = {
-    '{FOREGROUND}': foreground,
-    '{BACKGROUND}': background,
-    '{CURSOR}': cursor,
-    '{BLACK}': color0,
-    '{ALTBLACK}': color8,
-    '{RED}': color1,
-    '{ALTRED}': color9,
-    '{GREEN}': color2,
-    '{ALTGREEN}': color10,
-    '{YELLOW}': color3,
-    '{ALTYELLOW}': color11,
-    '{BLUE}': color4,
-    '{ALTBLUE}': color12,
-    '{MAGENTA}': color5,
-    '{ALTMAGENTA}': color13,
-    '{CYAN}': color6,
-    '{ALTCYAN}': color14,
-    '{WHITE}': color7,
-    '{ALTWHITE}': color15
+	'{FOREGROUND}': foreground,
+	'{BACKGROUND}': background,
+	'{CURSOR}': cursor,
+	'{BLACK}': color0,
+	'{ALTBLACK}': color8,
+	'{RED}': color1,
+	'{ALTRED}': color9,
+	'{GREEN}': color2,
+	'{ALTGREEN}': color10,
+	'{YELLOW}': color3,
+	'{ALTYELLOW}': color11,
+	'{BLUE}': color4,
+	'{ALTBLUE}': color12,
+	'{MAGENTA}': color5,
+	'{ALTMAGENTA}': color13,
+	'{CYAN}': color6,
+	'{ALTCYAN}': color14,
+	'{WHITE}': color7,
+	'{ALTWHITE}': color15
 }
 
 
-for filepath in glob.iglob(myhome+'/.config/Prime/templates/*'):
+for filepath in glob.iglob(templatepath):
 
 
 #file = abspath(join(dirname(__file__), 'templates/foo.txt'))
@@ -80,20 +80,20 @@ for filepath in glob.iglob(myhome+'/.config/Prime/templates/*'):
 
 	templatename1 = filepath.replace('\\', '/')
 	templatename2 = templatename1.replace(templatedir, '')
-	templatename = homedir + templatename2
+	templatename = myhome + templatename2
 #	file_out = os.system("ls ./templates/ | tr '\\' '/'")
 #new_file = abspath(join(dirname(__file__), 'bar.txt'))
 	new_file_open = open(templatename, 'w')
 
 
 	def replace_content(dict_replace, target):
-	    """Based on dict, replaces key with the value on the target."""
+		"""Based on dict, replaces key with the value on the target."""
 	
-	    for check, replacer in list(dict_replace.items()):
-	        target = sub(check, replacer, target)
+		for check, replacer in list(dict_replace.items()):
+			target = sub(check, replacer, target)
 	        # target = target.replace(check, replacer)
 
-	    return target
+		return target
 
 
 	new_content = replace_content(dict_replace, file_read)

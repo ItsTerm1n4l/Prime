@@ -24,13 +24,13 @@ If you create any templates please create an issue and paste it there or create 
 ### **Here is a quick guide to how the templates work.**
 The name of the template is the path to the theme file of the program you want to theme   
 but forwardslashes are replaced with backslashes, in the template file is the code for the theming of the program,   
-Here is an example using alacritty.       
+Here is an example using Alacritty.       
  ![alacritty demo](/assets/alacritty-demo.png)
 The hex values are replaced with placeholders for `prime` which reads them and inserts the correct colour and puts the     
 output file in the directory set in the file name, for alacritty the template name would be `\.config\alacritty\colours.yml`.   
-**Note:** These names start from the `$HOME` directory.
+**Note:**  These names start from the `$HOME` directory.
 
-This method using templates means that more programs can easily be added and themed so please do.
+This method using templates means that more programs can easily be added and themed so please do.   
 Thank you!   
 
 ### **Included Themes**
