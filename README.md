@@ -3,7 +3,7 @@ Universal themer for Linux programs.
 Set themes from a large collection of `.bash` colourschemes.
 ___
 
- ![screenshot with kanagawa theme](/assets/embark-screenshot.png)
+ ![screenshot with embark theme](/assets/embark-screenshot.png)
 ___
 ## **Usage**
 
@@ -33,12 +33,19 @@ output file in the directory set in the file name, for alacritty the template na
 This method using templates means that more programs can easily be added and themed so please do.   
 Thank you!   
 
+<details>
+<summary>Gallery (Click to expand)</summary>
+<br>
+ ![screenshot with nordic-night theme](/assets/nordic-night-screenshot.png)
+</details>
+
 ### **Included Themes**
  
 >Catppuccin-frappe  
 >Catppuccin-latte  
 >Catppuccin-macchiato  
 >Catppuccin-mocha    
+>Challenger-deep    
 >Dracula  
 >Embark  
 >Everforest  
@@ -47,11 +54,16 @@ Thank you!
 >Kanagawa-storm  
 >Kanagawa-wave  
 >Monokai  
+>Moonlight    
 >Nord   
 >Nordic-night  
 >Poimandres  
->Tokyo-night  		
->Tokyo-storm		
+>Pastel    
+>Rose-pine    
+>Rose-pine-dawn   
+>Rose-pine-moon   
+>Tokyo-night   
+>Tokyo-storm   
 
 Thanks:
 https://github.com/alacritty/alacritty-theme    
