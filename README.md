@@ -32,9 +32,10 @@ output file in the directory set in the file name, for alacritty the template na
 
 This method using templates means that more programs can easily be added and themed so please do.   
 Thank you!   
-
+### **Gallery**
 <details>
-<summary>Gallery (Click to expand)</summary>
+<summary>(Click to expand)</summary>
+
 ![](./assets/embark-screenshot.png)
 
 ![](./assets/everforest-screenshot.png)
