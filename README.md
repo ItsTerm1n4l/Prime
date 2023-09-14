@@ -36,7 +36,7 @@ Thank you!
 <details>
 <summary>Gallery (Click to expand)</summary>
 <br>
- ![screenshot with nordic-night theme](/assets/nordic-night-screenshot.png)
+ ![screenshot with nordic-night theme](./assets/nordic-night-screenshot.png)
 </details>
 
 ### **Included Themes**
