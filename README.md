@@ -35,10 +35,10 @@ Thank you!
 
 <details>
 <summary>Gallery (Click to expand)</summary>
-![](/assets/embark-screenshot.png)
-![](/assets/everforest-screenshot.png)
-![](/assets/poimandres-screenshot.png)
-![](/assets/monokai-screenshot.png)
+![](./assets/embark-screenshot.png)    
+![](./assets/everforest-screenshot.png)   
+![](./assets/poimandres-screenshot.png)   
+![](./assets/monokai-screenshot.png)   
 
 </details>
 
