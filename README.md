@@ -5,6 +5,8 @@ ___
 
  ![screenshot with nordic-night theme](/assets/nordic-night-screenshot.png)
 ___
+
+> **Note:** Prime is does not create themes based off (see [pywal](https://github.com/dylanaraps/pywal) images but from colourscheme files.
 ## **Usage**
 
 `prime -l #List available colourschemes`   
@@ -28,7 +30,7 @@ Here is an example using Alacritty.
  ![alacritty demo](/assets/alacritty-demo.png)
 The hex values are replaced with placeholders for `prime` which reads them and inserts the correct colour and puts the     
 output file in the directory set in the file name, for alacritty the template name would be `\.config\alacritty\colours.yml`.   
-**Note:**  These names start from the `$HOME` directory.
+>**Note:**  These names start from the `$HOME` directory.
 
 This method using templates means that more programs can easily be added and themed so please do.   
 Thank you!   
