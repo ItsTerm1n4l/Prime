@@ -6,7 +6,7 @@ ___
  ![screenshot with nordic-night theme](/assets/nordic-night-screenshot.png)
 ___
 
-> **Note:** Prime is does not create themes based off images (see [pywal](https://github.com/dylanaraps/pywal)) but from colourscheme files.
+> **Note:** Prime does not create themes based off images (see [pywal](https://github.com/dylanaraps/pywal)) but from colourscheme files.
 ## **Usage**
 
 `prime -l` #List available colourschemes   
