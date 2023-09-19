@@ -9,9 +9,9 @@ ___
 > **Note:** Prime is does not create themes based off images (see [pywal](https://github.com/dylanaraps/pywal)) but from colourscheme files.
 ## **Usage**
 
-`prime -l #List available colourschemes`   
-`prime -t <THEME_NAME> #Set chosen theme`   
-`prime -t $(prime -l | rofi -dmenu)`   
+`prime -l` #List available colourschemes   
+`prime -t <THEME_NAME>` #Set chosen theme   
+`prime -t $(prime -l | rofi -dmenu)` #Use Prime with rofi   
 
 ## **Installation**
 
