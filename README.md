@@ -10,7 +10,8 @@ ___
 ## **Usage**
 
 `prime -l #List available colourschemes`   
-`prime -t <THEME_NAME> #Set chosen theme`
+`prime -t <THEME_NAME> #Set chosen theme`   
+`prime -t $(prime -l | rofi -dmenu)`   
 
 ## **Installation**
 
@@ -21,7 +22,7 @@ cd ./Prime
 ```
 ## **Info**
 
-Theming is managed using templates, I have already cerated some and included them in the repo but this program is designed to be expanded and have many more templates added.   
+Theming is managed using templates, I have already created some and included them in the repo but this program is designed to be expanded and have many more templates added.   
 If you create any templates please create an issue and paste it there or create a pull request and I can add it to the repo.    
 ### **Here is a quick guide to how the templates work.**
 The name of the template is the path to the theme file of the program you want to theme   
@@ -38,12 +39,16 @@ Thank you!
 <details>
 <summary>(Click to expand)</summary>
 
+Embark theme.   
 ![](./assets/embark-screenshot.png)
 
+Everforest theme.   
 ![](./assets/everforest-screenshot.png)
 
+Poimandres theme.   
 ![](./assets/poimandres-screenshot.png)
 
+Monokai theme.   
 ![](./assets/monokai-screenshot.png)
 
 </details>
@@ -74,7 +79,7 @@ Thank you!
 >Tokyo-night   
 >Tokyo-storm   
 
-Thanks:
+Thanks:   
 https://github.com/alacritty/alacritty-theme    
 https://github.com/sainnhe      
 https://github.com/adi1090x and his awesome https://github.com/archcraft-os for inspiring me to make this!    

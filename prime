@@ -42,7 +42,7 @@ if args.theme != None:
 		os.system('rm $HOME/.config/Prime/current.py')
 		os.system('ln -s {}{}.bash $HOME/.config/Prime/current.py' .format(COLOURSCHEMEDIR, themename))
 elif args.list != None:
-		os.system('ls $HOME/.config/Prime/colourschemes')	
+		os.system('ls $HOME/.config/Prime/colourschemes | cut -f1 -d"."')	
 		raise SystemExit(1)		
 
 from current import *	# Import current theme
